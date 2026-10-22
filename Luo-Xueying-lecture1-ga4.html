@@ -2213,8 +2213,7 @@ vertical-align: -.125em;
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
-  <li><a href="#select-from-limit" id="toc-select-from-limit" class="nav-link" data-scroll-target="#select-from-limit">1. SELECT / FROM / LIMIT</a>
+  <li><a href="#select-from-limit" id="toc-select-from-limit" class="nav-link active" data-scroll-target="#select-from-limit">1. SELECT / FROM / LIMIT</a>
   <ul class="collapse">
   <li><a href="#query-1-select-event-records" id="toc-query-1-select-event-records" class="nav-link" data-scroll-target="#query-1-select-event-records">Query 1 — Select event records</a></li>
   </ul></li>
@@ -2246,6 +2245,7 @@ vertical-align: -.125em;
   <li><a href="#query-7-first-week-of-december" id="toc-query-7-first-week-of-december" class="nav-link" data-scroll-target="#query-7-first-week-of-december">Query 7 — First week of December</a></li>
   </ul></li>
   <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways">Key takeaways</a></li>
+  <li><a href="#project-links" id="toc-project-links" class="nav-link" data-scroll-target="#project-links">Project Links</a></li>
   </ul>
 </nav>
 </div>
@@ -2283,12 +2283,6 @@ vertical-align: -.125em;
 </header>
 
 
-<section id="overview" class="level1">
-<h1>Overview</h1>
-<p>This notebook follows the 10 queries in Lecture 1 using the public GA4 obfuscated sample ecommerce BigQuery dataset. I ran each query in BigQuery Studio and included a screenshot of its output. The SQL blocks are shown for reference and are not executed when this notebook renders.</p>
-<p><strong>Dataset:</strong> <code>bigquery-public-data.ga4_obfuscated_sample_ecommerce.events_*</code><br>
-<strong>Reference:</strong> <a href="https://support.google.com/analytics/answer/7029846">Google Analytics BigQuery Export Schema</a></p>
-</section>
 <section id="select-from-limit" class="level1">
 <h1>1. SELECT / FROM / LIMIT</h1>
 <section id="query-1-select-event-records" class="level2">
@@ -2517,6 +2511,13 @@ vertical-align: -.125em;
 <section id="key-takeaways" class="level1">
 <h1>Key takeaways</h1>
 <p>In this exercise, I practiced selecting columns, filtering records, sorting events, counting records, and grouping event data. <code>WHERE</code> filters individual records before aggregation, while <code>HAVING</code> filters groups after the counts are calculated. I also used <code>_TABLE_SUFFIX</code> to target the dates needed instead of querying every daily table. The results give a basic picture of event activity, but event counts alone do not tell us how many people converted.</p>
+</section>
+<section id="project-links" class="level1">
+<h1>Project Links</h1>
+<ul>
+<li><a href="https://sheilaaa0312.github.io/Luo-Xueying-lecture1-ga4/">View the notebook on GitHub Pages</a></li>
+<li><a href="https://github.com/Sheilaaa0312/Luo-Xueying-lecture1-ga4">View the source files on GitHub</a></li>
+</ul>
 </section>
 
 </main>

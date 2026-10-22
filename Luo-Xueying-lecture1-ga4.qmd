@@ -16,13 +16,6 @@ format:
 editor: visual
 ---
 
-# Overview
-
-This notebook follows the 10 queries in Lecture 1 using the public GA4 obfuscated sample ecommerce BigQuery dataset. I ran each query in BigQuery Studio and included a screenshot of its output. The SQL blocks are shown for reference and are not executed when this notebook renders.
-
-**Dataset:** `bigquery-public-data.ga4_obfuscated_sample_ecommerce.events_*`\
-**Reference:** [Google Analytics BigQuery Export Schema](https://support.google.com/analytics/answer/7029846)
-
 # 1. SELECT / FROM / LIMIT
 
 ## Query 1 — Select event records
@@ -244,3 +237,8 @@ ORDER BY
 # Key takeaways
 
 In this exercise, I practiced selecting columns, filtering records, sorting events, counting records, and grouping event data. `WHERE` filters individual records before aggregation, while `HAVING` filters groups after the counts are calculated. I also used `_TABLE_SUFFIX` to target the dates needed instead of querying every daily table. The results give a basic picture of event activity, but event counts alone do not tell us how many people converted.
+
+# Project Links
+
+- [View the notebook on GitHub Pages](https://sheilaaa0312.github.io/Luo-Xueying-lecture1-ga4/)
+- [View the source files on GitHub](https://github.com/Sheilaaa0312/Luo-Xueying-lecture1-ga4)
