@@ -29,9 +29,9 @@ FROM
 LIMIT 20;
 ```
 
-**What the query does and what I found:** This query selects the event date and event name and returns 20 rows. The results include `user_engagement` and `page_view`. Since there is no sorting condition, these are just 20 returned records, not necessarily the earliest or latest.
+What the query does and what I found: This query selects the event date and event name and returns 20 rows. The results include `user_engagement` and `page_view`. Since there is no sorting condition, these are just 20 returned records, not necessarily the earliest or latest.
 
-**BigQuery result screenshot**
+BigQuery result screenshot
 
 ![Query 1 — Select event records — BigQuery query and results](images/query-1.png){fig-alt="BigQuery SQL editor and result table for Query 1 — Select event records" width="100%"}
 
@@ -51,9 +51,9 @@ WHERE
 LIMIT 50;
 ```
 
-**What the query does and what I found:** The `WHERE` condition keeps only events named `purchase`. All 50 returned rows show purchase events, along with their dates and pseudonymous user IDs.
+What the query does and what I found: The `WHERE` condition keeps only events named `purchase`. All 50 returned rows show purchase events, along with their dates and pseudonymous user IDs.
 
-**BigQuery result screenshot**
+BigQuery result screenshot
 
 ![Query 2 — Purchase events — BigQuery query and results](images/query-2.png){fig-alt="BigQuery SQL editor and result table for Query 2 — Purchase events" width="100%"}
 
@@ -75,9 +75,9 @@ ORDER BY
 LIMIT 20;
 ```
 
-**What the query does and what I found:** This query sorts purchase events by timestamp, newest first, and returns 20 records. The most recent purchase events in the results occurred on January 31, 2021.
+What the query does and what I found: This query sorts purchase events by timestamp, newest first, and returns 20 records. The most recent purchase events in the results occurred on January 31, 2021.
 
-**BigQuery result screenshot**
+BigQuery result screenshot
 
 ![Query 3A — Sort purchases — BigQuery query and results](images/query-3a.png){fig-alt="BigQuery SQL editor and result table for Query 3A — Sort purchases" width="100%"}
 
@@ -94,9 +94,9 @@ ORDER BY
 LIMIT 10;
 ```
 
-**What the query does and what I found:** `TIMESTAMP_MICROS()` changes the microsecond timestamp into a readable date and time in UTC. The 10 newest event records include `user_engagement`, `view_promotion`, and `page_view` on January 31, 2021.
+What the query does and what I found: `TIMESTAMP_MICROS()` changes the microsecond timestamp into a readable date and time in UTC. The 10 newest event records include `user_engagement`, `view_promotion`, and `page_view` on January 31, 2021.
 
-**BigQuery result screenshot**
+BigQuery result screenshot
 
 ![Query 3B — Readable timestamps — BigQuery query and results](images/query-3b.png){fig-alt="BigQuery SQL editor and result table for Query 3B — Readable timestamps" width="100%"}
 
@@ -113,9 +113,9 @@ WHERE
   _TABLE_SUFFIX BETWEEN '20201201' AND '20201231';
 ```
 
-**What the query does and what I found:** `COUNT(*)` counts all recorded events in the December 2020 daily tables. BigQuery returned **1,612,725** events.
+What the query does and what I found: `COUNT(*)` counts all recorded events in the December 2020 daily tables. BigQuery returned 1,612,725 events.
 
-**BigQuery result screenshot**
+BigQuery result screenshot
 
 ![Query 4A — Count all December events — BigQuery query and results](images/query-4a.png){fig-alt="BigQuery SQL editor and result table for Query 4A — Count all December events" width="100%"}
 
@@ -131,9 +131,9 @@ WHERE
   AND _TABLE_SUFFIX BETWEEN '20201201' AND '20201231';
 ```
 
-**What the query does and what I found:** This query adds a purchase filter to the December date range. There were **2,434 purchase events**, about **0.15% of all recorded events** in the month. That percentage is a share of events, not a user conversion rate.
+What the query does and what I found: This query adds a purchase filter to the December date range. There were 2,434 purchase events, about 0.15% of all recorded events in the month. That percentage is a share of events, not a user conversion rate.
 
-**BigQuery result screenshot**
+BigQuery result screenshot
 
 ![Query 4B — Count December purchases — BigQuery query and results](images/query-4b.png){fig-alt="BigQuery SQL editor and result table for Query 4B — Count December purchases" width="100%"}
 
@@ -155,9 +155,9 @@ ORDER BY
   event_date;
 ```
 
-**What the query does and what I found:** Grouping by `event_date` gives one row for each day in December 2020 (31 rows). For example, December 8 had **92,199** events, compared with **49,528** on December 5.
+What the query does and what I found: Grouping by `event_date` gives one row for each day in December 2020 (31 rows). For example, December 8 had 92,199 events, compared with 49,528 on December 5.
 
-**BigQuery result screenshot**
+BigQuery result screenshot
 
 ![Query 5A — Events by day — BigQuery query and results](images/query-5a.png){fig-alt="BigQuery SQL editor and result table for Query 5A — Events by day" width="100%"}
 
@@ -178,9 +178,9 @@ ORDER BY
 LIMIT 15;
 ```
 
-**What the query does and what I found:** This query groups records by event type, counts them, and shows the 15 most frequent event types. `page_view` leads with **477,520** events, followed by `user_engagement` with **401,428**.
+What the query does and what I found: This query groups records by event type, counts them, and shows the 15 most frequent event types. `page_view` leads with 477,520 events, followed by `user_engagement` with 401,428.
 
-**BigQuery result screenshot**
+BigQuery result screenshot
 
 ![Query 5B — Top event types — BigQuery query and results](images/query-5b.png){fig-alt="BigQuery SQL editor and result table for Query 5B — Top event types" width="100%"}
 
@@ -204,9 +204,9 @@ ORDER BY
   events DESC;
 ```
 
-**What the query does and what I found:** `HAVING` filters the aggregated counts after `GROUP BY`. Seven event types occurred at least 50,000 times in December 2020. `page_view` was the highest at **477,520**.
+What the query does and what I found: `HAVING` filters the aggregated counts after `GROUP BY`. Seven event types occurred at least 50,000 times in December 2020. `page_view` was the highest at 477,520.
 
-**BigQuery result screenshot**
+BigQuery result screenshot
 
 ![Query 6 — Event types with 50,000+ events — BigQuery query and results](images/query-6.png){fig-alt="BigQuery SQL editor and result table for Query 6 — Event types with 50,000+ events" width="100%"}
 
@@ -228,9 +228,9 @@ ORDER BY
   event_date;
 ```
 
-**What the query does and what I found:** The wildcard `events_*` refers to multiple daily tables, while `_TABLE_SUFFIX` narrows the scan to December 1–7, 2020. The result contains seven daily counts, including **71,804** on December 1 and **42,828** on December 6.
+What the query does and what I found: The wildcard `events_*` refers to multiple daily tables, while `_TABLE_SUFFIX` narrows the scan to December 1–7, 2020. The result contains seven daily counts, including 71,804 on December 1 and 42,828 on December 6.
 
-**BigQuery result screenshot**
+BigQuery result screenshot
 
 ![Query 7 — First week of December — BigQuery query and results](images/query-7.png){fig-alt="BigQuery SQL editor and result table for Query 7 — First week of December" width="100%"}
 
